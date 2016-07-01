@@ -44,6 +44,10 @@ class UnlimitedNumberInputWidget extends \yii\widgets\InputWidget
             $this->options['class'] = 'form-control';
         }
 
+        if ($this->isUnlimited()) {
+            $this->options['class'] .= ' hidden';
+        }
+
         // Set Number input type by default
         if (!isset($this->options['type'])) {
             $this->options['type'] = 'number';

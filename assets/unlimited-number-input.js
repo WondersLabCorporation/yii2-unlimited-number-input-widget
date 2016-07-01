@@ -5,5 +5,5 @@ function initUnlimitedCheckbox(checkboxSelector, inputSelector, unlimitedValue) 
         } else {
             $(inputSelector).removeClass('hidden').val('');
         }
-    }).trigger('change');
+    });
 }
