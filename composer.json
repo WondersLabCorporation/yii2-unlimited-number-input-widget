@@ -1,14 +1,15 @@
 {
-  "name": "WondersLabCorporation/yii2-unlimited-number-widget",
-  "description": "The yii2-unlimited-number-widget is a custom widget which allows to set number or set value as Unlimited.",
+  "name": "WondersLabCorporation/yii2-unlimited-number-input-widget",
+  "description": "The yii2-unlimited-number-input-widget is a custom widget which allows to set number or set value as Unlimited.",
   "type": "yii2-extension",
   "keywords": [
     "yii2",
     "extension",
     "yii2 number widget",
-    "yii2 unlimited number widget"
+    "yii2 unlimited number widget",
+    "yii2 unlimited number input widget"
   ],
-  "homepage": "https://github.com/WondersLabCorporation/yii2-unlimited-number-widget",
+  "homepage": "https://github.com/WondersLabCorporation/yii2-unlimited-number-input-widget",
   "license": "BSD-3-Clause",
   "authors": [
     {
@@ -17,8 +18,8 @@
     }
   ],
   "support": {
-    "issues": "https://github.com/WondersLabCorporation/yii2-unlimited-number-widget/issues",
-    "source": "https://github.com/WondersLabCorporation/yii2-unlimited-number-widget"
+    "issues": "https://github.com/WondersLabCorporation/yii2-unlimited-number-input-widget/issues",
+    "source": "https://github.com/WondersLabCorporation/yii2-unlimited-number-input-widget"
   },
   "require": {
     "yiisoft/yii2": "~2.0",
@@ -29,7 +30,7 @@
   },
   "autoload": {
     "psr-4": {
-      "WondersLabCorporation\\": "src"
+      "WondersLabCorporation\\UnlimitedNumber\\": "src"
     }
   }
 }
