@@ -27,6 +27,7 @@ composer require WondersLabCorporation/yii2-unlimited-number-input-widget:"dev-m
 Usage
 ------------
 
+Use as a separate widget
 ```php
 echo \WondersLabCorporation\UnlimitedNumberInputWidget::widget([
         // Override default Asset bundle if needed
@@ -44,9 +45,14 @@ echo \WondersLabCorporation\UnlimitedNumberInputWidget::widget([
 );
 ```
 
+Or as a form widget
 ```php
-echo $form->field($model, 'number_field')->widget(\WondersLabCorporation\UnlimitedNumberInputWidget::className(), [
-    'options' => ['id' => 'my-custom-id'],
-    'unlimitedValue' => -3,
-]);
+echo $form->field($model, 'number_field')
+    ->widget(
+        \WondersLabCorporation\UnlimitedNumberInputWidget::className(),
+        [
+            'options' => ['id' => 'my-custom-id'],
+            'unlimitedValue' => -3,
+        ]
+    );
 ```
