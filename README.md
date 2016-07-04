@@ -56,3 +56,27 @@ echo $form->field($model, 'number_field')
         ]
     );
 ```
+
+Real-world examples:
+------------
+
+Using widget to truncate 'slug' field value by clicking the checkbox so that SlugAttribute is able to re-generate slug for the model
+
+```php
+echo $form->field($model, 'slug')
+   ->widget(
+   // Adjusting Unlimited number widget to truncate field value when checkbox is checked
+   UnlimitedNumberInputWidget::className(),
+   [
+       'unlimitedValue' => null,
+       'checkboxOptions' => ['label' => Yii::t('backend', 'Generate automatically')],
+       'options' => ['type' => 'text'],
+   ]
+);
+```
+
+Using widget to fill in items_amount field with -1 (unlimited) or numeric value
+
+```php
+echo $form->field($model, 'items_amount')->widget(UnlimitedNumberInputWidget::className());
+```
