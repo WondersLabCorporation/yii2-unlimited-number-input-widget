@@ -1,9 +1,11 @@
-function initUnlimitedCheckbox(checkboxSelector, inputSelector, unlimitedValue) {
-    $(checkboxSelector).on('change', function(){
+function initUnlimitedCheckbox(options) {
+    $(options.checkboxSelector).on('change', function(){
         if($(this).prop('checked')) {
-            $(inputSelector).addClass('hidden').val(unlimitedValue);
+            $(options.inputSelector).addClass('hidden').val(options.unlimitedValue);
         } else {
-            $(inputSelector).removeClass('hidden').val('');
+            $(options.inputSelector).removeClass('hidden').val(options.emptyValue);
         }
+        // Triggering input change to allow JS validators do their job
+        $(options.inputSelector).trigger('change');
     });
 }

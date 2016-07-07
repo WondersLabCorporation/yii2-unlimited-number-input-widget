@@ -37,6 +37,8 @@ echo \WondersLabCorporation\UnlimitedNumberInputWidget::widget([
         'attribute' => 'number_field',
         // Define your own unlimitedValue in case you need it (-1 is used by default)
         'unlimitedValue' => 100,
+        // Define your own emptyValue in case you need it (0 is used by default)
+        'unlimitedValue' => 100,
         // Override checkbox options to set custom Label for example
         'checkboxOptions' => ['label' => 'Mu custom Unlimited label'],
         // Set your custom Input options. e.g. override default type=number
@@ -47,12 +49,13 @@ echo \WondersLabCorporation\UnlimitedNumberInputWidget::widget([
 
 Or as a form widget
 ```php
-echo $form->field($model, 'number_field')
+echo $form->field($model, 'some_field')
     ->widget(
         \WondersLabCorporation\UnlimitedNumberInputWidget::className(),
         [
             'options' => ['id' => 'my-custom-id'],
             'unlimitedValue' => -3,
+            'emptyValue' => 'nothing here',
         ]
     );
 ```
@@ -69,13 +72,14 @@ echo $form->field($model, 'slug')
    UnlimitedNumberInputWidget::className(),
    [
        'unlimitedValue' => null,
+       'emptyValue' => '',
        'checkboxOptions' => ['label' => Yii::t('backend', 'Generate automatically')],
        'options' => ['type' => 'text'],
    ]
 );
 ```
 
-Using widget to fill in items_amount field with -1 (unlimited) or numeric value
+Using widget to fill in items_amount field with -1 (unlimited) or numeric value. When checkbox is unchecked - emptyValue is used (0 by default)
 
 ```php
 echo $form->field($model, 'items_amount')->widget(UnlimitedNumberInputWidget::className());

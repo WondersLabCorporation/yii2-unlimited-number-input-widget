@@ -22,6 +22,11 @@ class UnlimitedNumberInputWidget extends \yii\widgets\InputWidget
     public $unlimitedValue = -1;
 
     /**
+     * @var mixed Empty value
+     */
+    public $emptyValue = 0;
+
+    /**
      * @var string Unlimited checkbox options
      */
     public $checkboxOptions = [];
@@ -103,7 +108,13 @@ class UnlimitedNumberInputWidget extends \yii\widgets\InputWidget
         $view = $this->getView();
         $assetClass = $this->asset;
         call_user_func([$assetClass, 'register'], $view);
-        $view->registerJs("initUnlimitedCheckbox('#{$this->checkboxOptions['id']}', '#{$this->options['id']}', '{$this->unlimitedValue}');");
+        $optionsJson = json_encode([
+            'checkboxSelector' => "#{$this->checkboxOptions['id']}",
+            'inputSelector' => "#{$this->options['id']}",
+            'unlimitedValue' => $this->unlimitedValue,
+            'emptyValue' => $this->emptyValue,
+        ]);
+        $view->registerJs("initUnlimitedCheckbox($optionsJson);");
     }
 
 }
